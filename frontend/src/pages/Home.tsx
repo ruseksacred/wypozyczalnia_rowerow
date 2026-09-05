@@ -1,7 +1,7 @@
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Offer from '../components/Offer'
-import Pricing from '../components/Pricing'
+
 
 function Home() {
     return (
@@ -9,7 +9,7 @@ function Home() {
             <Hero />
             <About />
             <Offer />
-            <Pricing />
+            
         </>
     )
 }

@@ -46,7 +46,7 @@ function Navbar() {
                     <Link to="/#o-nas">O nas</Link>
                     <Link to="/#oferta">Oferta</Link>
                     <Link to="/rowery">Rowery</Link>
-                    <Link to="/#cennik">Cennik</Link>
+                    <Link to="/cennik">Cennik</Link>
                     <Link to="/trasy">Trasy</Link>
                     <Link to="/kontakt">Kontakt</Link>
 

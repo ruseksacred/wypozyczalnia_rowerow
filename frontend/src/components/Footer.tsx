@@ -29,6 +29,24 @@ function Footer() {
                     <Link to="/trasy">Trasy</Link>
                     <Link to="/kontakt">Kontakt</Link>
                 </div>
+                <div className="footer-hours">
+                    <h3>Godziny otwarcia</h3>
+
+                    <div className="footer-hours-row">
+                        <span>Poniedziałek – Piątek</span>
+                        <strong>9:00 – 18:00</strong>
+                    </div>
+
+                    <div className="footer-hours-row">
+                        <span>Sobota</span>
+                        <strong>9:00 – 18:00</strong>
+                    </div>
+
+                    <div className="footer-hours-row">
+                        <span>Niedziela</span>
+                        <strong>10:00 – 17:00</strong>
+                    </div>
+                </div>
 
                 <div className="footer-contact">
                     <h3>Kontakt</h3>
