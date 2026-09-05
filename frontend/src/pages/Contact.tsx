@@ -39,12 +39,12 @@ function Contact() {
 
                         <div>
                             <strong>📞 Telefon</strong>
-                            <span>+48 000 000 000</span>
+                            <span>+48 791 020 803</span>
                         </div>
 
                         <div>
                             <strong>✉️ E-mail</strong>
-                            <span>kontakt@rowerylatoszynzdroj.pl</span>
+                            <span>rowery.latoszynzdroj@gmail.com</span>
                         </div>
                     </div>
                 </div>
@@ -53,63 +53,38 @@ function Contact() {
                     <h2>Wyślij zapytanie</h2>
 
                     <form className="contact-form">
-                        <div className="form-row">
-                            <label>
-                                Imię
-                                <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Jak masz na imię?"
-                                />
-                            </label>
-
-                            <label>
-                                E-mail
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Twój adres e-mail"
-                                />
-                            </label>
-                        </div>
-
                         <label>
-                            Telefon
+                            Imię i nazwisko
                             <input
-                                type="tel"
-                                name="phone"
-                                placeholder="Numer telefonu"
+                                type="text"
+                                name="name"
+                                placeholder="Jan Kowalski"
+                                required
                             />
                         </label>
 
                         <label>
-                            Rodzaj roweru
-                            <select name="bike">
-                                <option value="">
-                                    Wybierz rower
-                                </option>
-                                <option value="gravel">Gravel</option>
-                                <option value="e-bike">E-bike</option>
-                                <option value="e-mtb">E-MTB</option>
-                            </select>
-                        </label>
-
-                        <label>
-                            Termin
-                            <input type="date" name="date" />
+                            E-mail
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="jan@przyklad.pl"
+                                required
+                            />
                         </label>
 
                         <label>
                             Wiadomość
                             <textarea
                                 name="message"
-                                rows={5}
-                                placeholder="Napisz, czego potrzebujesz..."
+                                rows={6}
+                                placeholder="W czym możemy Ci pomóc?"
+                                required
                             ></textarea>
                         </label>
 
                         <button type="submit">
-                            Wyślij zapytanie
+                            Wyślij wiadomość
                         </button>
                     </form>
                 </div>

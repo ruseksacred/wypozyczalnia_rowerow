@@ -33,9 +33,9 @@ function Footer() {
                 <div className="footer-contact">
                     <h3>Kontakt</h3>
 
-                    <p>📍 Latoszyn-Zdrój</p>
-                    <p>📞 +48 000 000 000</p>
-                    <p>✉️ kontakt@rowerylatoszynzdroj.pl</p>
+                    <p>📍 Latoszyn-Zdrój 147j</p>
+                    <p>📞 +48 791 020 803</p>
+                    <p>✉️ rowery.latoszynzdroj@gmail.com</p>
                 </div>
 
             </div>
