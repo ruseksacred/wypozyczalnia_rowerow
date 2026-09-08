@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 import { FaFacebookF, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 
 function Navbar() {
+    const [menuOpen, setMenuOpen] = useState(false)
     return (
         <header className="site-header">
 
@@ -41,9 +43,20 @@ function Navbar() {
                         />
                     </Link>
                 </div>
+                <button
+                    type="button"
+                    className="navbar-toggle"
+                    onClick={() => setMenuOpen(prev => !prev)}
+                    aria-label="Otwórz menu"
+                >
+                    ☰
+                </button>
 
-                <div className="navbar-menu">
+                <p>{menuOpen ? 'OTWARTE' : 'ZAMKNIĘTE'}</p>
+
+                <div className={`navbar-menu ${menuOpen ? 'open' : ''}`}>
                     <Link to="/#o-nas">O nas</Link>
+                    <Link to="/#galeria">Galeria</Link>
                     <Link to="/#oferta">Oferta</Link>
                     <Link to="/rowery">Rowery</Link>
                     <Link to="/cennik">Cennik</Link>

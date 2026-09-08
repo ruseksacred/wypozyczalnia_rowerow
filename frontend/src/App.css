@@ -1115,3 +1115,136 @@ a.topbar-item:hover {
         background: var(--green);
         transform: translateY(-2px);
     }
+/* GALLERY */
+
+.gallery-section {
+    padding: 100px 7vw;
+    background: #ffffff;
+}
+
+.gallery-heading {
+    max-width: 650px;
+    margin-bottom: 45px;
+}
+
+.gallery-label {
+    margin: 0 0 15px;
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.gallery-heading h2 {
+    margin: 0 0 20px;
+    color: var(--text-dark);
+    font-size: 48px;
+    line-height: 1.1;
+}
+
+.gallery-heading > p:not(.gallery-label) {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.gallery-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 240px;
+    gap: 18px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.05);
+    }
+
+/* pierwsze zdjęcie większe */
+
+.gallery-item-1 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+.navbar-toggle {
+    display: none;
+}
+@media (max-width: 900px) {
+    .topbar-content {
+        justify-content: center;
+    }
+
+    .topbar-item:not(:last-child) {
+        display: none;
+    }
+
+    nav {
+        height: 90px;
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .navbar-logo img {
+        width: 78px;
+        height: 78px;
+    }
+
+    .navbar-toggle {
+        display: block;
+        border: none;
+        background: transparent;
+        color: var(--green-dark);
+        font-size: 34px;
+        cursor: pointer;
+    }
+
+    .navbar-menu {
+        position: absolute;
+        top: 90px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 20px;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        z-index: 100;
+    }
+
+        .navbar-menu.open {
+            display: flex;
+        }
+
+        .navbar-menu > a {
+            padding: 14px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+    .navbar-socials {
+        margin: 18px 0 0;
+        padding: 0;
+        border-left: none;
+    }
+
+    .call-button {
+        margin-top: 18px !important;
+        justify-content: center;
+    }
+}
