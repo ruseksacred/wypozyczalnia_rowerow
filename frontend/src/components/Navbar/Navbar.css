@@ -1,0 +1,222 @@
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    background: var(--green-dark);
+    color: white;
+}
+
+.topbar-content {
+    height: 38px;
+    padding: 0 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    font-size: 13px;
+}
+
+.topbar-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #e6efe9;
+    text-decoration: none;
+}
+
+a.topbar-item:hover {
+    color: white;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.site-header nav {
+    height: 150px;
+    padding: 0 7vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+
+/* LOGO */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+    .navbar-logo img {
+        display: block;
+        width: 145px;
+        height: 145px;
+        object-fit: contain;
+    }
+
+
+/* MENU */
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+    .navbar-menu > a {
+        margin: 0;
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        .navbar-menu > a:hover {
+            color: var(--green);
+        }
+
+
+/* SOCIAL MEDIA */
+
+.navbar-socials {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10px;
+    padding-left: 20px;
+    border-left: 1px solid var(--border);
+}
+
+    .navbar-socials a {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: var(--green-light);
+        color: var(--green-dark);
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+        .navbar-socials a:hover {
+            background: var(--green-dark);
+            color: white;
+        }
+
+
+/* CALL BUTTON */
+
+.call-button {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    margin: 0 !important;
+    padding: 13px 20px;
+    background: var(--green-dark);
+    color: white !important;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.2s ease;
+}
+
+    .call-button:hover {
+        background: var(--green) !important;
+        transform: translateY(-2px);
+    }
+
+
+/* HAMBURGER */
+
+.navbar-toggle {
+    display: none;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .topbar-content {
+        height: 36px;
+        padding: 0 16px;
+        justify-content: center;
+    }
+
+    /* Na telefonie pokazujemy tylko numer telefonu */
+    .topbar-item:not(:last-child) {
+        display: none;
+    }
+
+    .site-header nav {
+        height: 80px;
+        padding: 0 20px;
+        position: relative;
+    }
+
+    .navbar-logo img {
+        width: 72px;
+        height: 72px;
+    }
+
+    .navbar-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        border: none;
+        background: transparent;
+        color: var(--green-dark);
+        font-size: 34px;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    .navbar-menu {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px 20px 22px;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+        z-index: 1000;
+    }
+
+        .navbar-menu.open {
+            display: flex;
+        }
+
+        .navbar-menu > a:not(.call-button) {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+    .navbar-socials {
+        margin: 18px 0 0;
+        padding: 0;
+        border-left: none;
+    }
+
+    .call-button {
+        margin-top: 18px !important;
+        justify-content: center;
+    }
+}
