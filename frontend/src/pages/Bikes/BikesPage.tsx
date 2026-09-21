@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import './BikesPage.css'
 
 type BikeType =
     | 'all'
@@ -30,9 +31,9 @@ const bikes: Bike[] = [
             'Lekki i szybki rower idealny na asfalt, szutry i dłuższe wycieczki.',
         image: '/bike-gravel.jpg',
         features: [
-            'lekka konstrukcja',
-            'wygodna pozycja',
-            'idealny na asfalt i szutry'
+            'Lekka konstrukcja',
+            'Wygodna pozycja',
+            'Idealny na asfalt i szutry'
         ]
     },
     {
@@ -44,9 +45,9 @@ const bikes: Bike[] = [
             'Klasyczny rower górski przygotowany do jazdy po lesie i bardziej wymagającym terenie.',
         image: '/bike-mtb.jpg',
         features: [
-            'amortyzowany widelec',
-            'terenowe opony',
-            'mocne hamulce'
+            'Amortyzowany widelec',
+            'Terenowe opony',
+            'Mocne hamulce'
         ]
     },
     {
@@ -58,9 +59,9 @@ const bikes: Bike[] = [
             'Komfortowy rower ze wspomaganiem elektrycznym na dłuższe wycieczki i podjazdy.',
         image: '/bike-ebike.jpg',
         features: [
-            'wspomaganie elektryczne',
-            'duży zasięg',
-            'komfortowa pozycja'
+            'Wspomaganie elektryczne',
+            'Duży zasięg',
+            'Komfortowa pozycja'
         ]
     },
     {
@@ -72,9 +73,9 @@ const bikes: Bike[] = [
             'Elektryczny rower górski dla osób, które chcą eksplorować lasy i trudniejsze trasy.',
         image: '/bike-emtb.jpg',
         features: [
-            'mocne wspomaganie',
-            'amortyzacja',
-            'idealny na podjazdy'
+            'Mocne wspomaganie',
+            'Amortyzacja',
+            'Idealny na podjazdy'
         ]
     },
     {
@@ -86,9 +87,9 @@ const bikes: Bike[] = [
             'Wygodny rower na spokojną wycieczkę po Latoszynie-Zdroju i okolicy.',
         image: '/bike-city.jpg',
         features: [
-            'wygodna pozycja',
-            'łatwa obsługa',
-            'idealny na rekreację'
+            'Wygodna pozycja',
+            'Łatwa obsługa',
+            'Idealny na rekreację'
         ]
     },
     {
@@ -100,11 +101,21 @@ const bikes: Bike[] = [
             'Szybki i wygodny sposób na krótkie przejazdy po okolicy.',
         image: '/scooter-electric.jpg',
         features: [
-            'napęd elektryczny',
-            'łatwa obsługa',
-            'idealna na krótkie przejazdy'
+            'Napęd elektryczny',
+            'Łatwa obsługa',
+            'Idealna na krótkie przejazdy'
         ]
     }
+]
+
+const filters: { label: string; value: BikeType }[] = [
+    { label: 'Wszystkie', value: 'all' },
+    { label: 'Gravel', value: 'gravel' },
+    { label: 'MTB', value: 'mtb' },
+    { label: 'E-bike', value: 'ebike' },
+    { label: 'E-MTB', value: 'emtb' },
+    { label: 'Miejskie', value: 'city' },
+    { label: 'Hulajnogi', value: 'scooter' }
 ]
 
 function BikesPage() {
@@ -119,72 +130,43 @@ function BikesPage() {
         <main className="bikes-page">
 
             <section className="bikes-hero">
-                <p className="bikes-label">
-                    NASZA FLOTA
-                </p>
+                <div className="bikes-hero-content">
 
-                <h1>
-                    Wybierz sprzęt
-                    <br />
-                    dla siebie
-                </h1>
+                    <p className="bikes-label">
+                        NASZA FLOTA
+                    </p>
 
-                <p className="bikes-intro">
-                    Od spokojnej wycieczki po okolicy po wymagające
-                    leśne trasy. Wybierz rower dopasowany do swojego
-                    stylu jazdy.
-                </p>
+                    <h1>
+                        Wybierz sprzęt
+                        <br />
+                        dla siebie
+                    </h1>
 
-                <div className="bike-filters">
+                    <p className="bikes-intro">
+                        Od spokojnej wycieczki po okolicy po wymagające
+                        leśne trasy. Wybierz sprzęt dopasowany do swojego
+                        stylu jazdy.
+                    </p>
 
-                    <button
-                        className={filter === 'all' ? 'active' : ''}
-                        onClick={() => setFilter('all')}
+                    <div
+                        className="bike-filters"
+                        aria-label="Filtrowanie rowerów"
                     >
-                        Wszystkie
-                    </button>
-
-                    <button
-                        className={filter === 'gravel' ? 'active' : ''}
-                        onClick={() => setFilter('gravel')}
-                    >
-                        Gravel
-                    </button>
-
-                    <button
-                        className={filter === 'mtb' ? 'active' : ''}
-                        onClick={() => setFilter('mtb')}
-                    >
-                        MTB
-                    </button>
-
-                    <button
-                        className={filter === 'ebike' ? 'active' : ''}
-                        onClick={() => setFilter('ebike')}
-                    >
-                        E-bike
-                    </button>
-
-                    <button
-                        className={filter === 'emtb' ? 'active' : ''}
-                        onClick={() => setFilter('emtb')}
-                    >
-                        E-MTB
-                    </button>
-
-                    <button
-                        className={filter === 'city' ? 'active' : ''}
-                        onClick={() => setFilter('city')}
-                    >
-                        Miejskie
-                    </button>
-
-                    <button
-                        className={filter === 'scooter' ? 'active' : ''}
-                        onClick={() => setFilter('scooter')}
-                    >
-                        Hulajnogi
-                    </button>
+                        {filters.map((item) => (
+                            <button
+                                key={item.value}
+                                type="button"
+                                className={
+                                    filter === item.value
+                                        ? 'active'
+                                        : ''
+                                }
+                                onClick={() => setFilter(item.value)}
+                            >
+                                {item.label}
+                            </button>
+                        ))}
+                    </div>
 
                 </div>
             </section>
@@ -200,17 +182,17 @@ function BikesPage() {
                             <img
                                 src={bike.image}
                                 alt={bike.name}
+                                loading="lazy"
                             />
                         </div>
 
                         <div className="bike-content">
+
                             <p className="bike-type">
                                 {bike.category}
                             </p>
 
-                            <h2>
-                                {bike.name}
-                            </h2>
+                            <h2>{bike.name}</h2>
 
                             <p className="bike-description">
                                 {bike.description}
@@ -227,6 +209,7 @@ function BikesPage() {
                             <Link to="/kontakt">
                                 Zapytaj o dostępność
                             </Link>
+
                         </div>
                     </article>
                 ))}
