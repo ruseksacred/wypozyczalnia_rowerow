@@ -1,6 +1,6 @@
 import Hero from '../components/Hero/Hero'
 import About from '../components/About'
-import Offer from '../components/Offer'
+import Offer from '../components/Offer/Offer'
 import Gallery from '../components/Gallery'
 
 
@@ -9,8 +9,9 @@ function Home() {
         <>
             <Hero />
             <About />
-            <Gallery />
             <Offer />
+            <Gallery />
+            
             
         </>
     )
