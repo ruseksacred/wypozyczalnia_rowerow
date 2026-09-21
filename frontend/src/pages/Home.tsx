@@ -1,7 +1,7 @@
 import Hero from '../components/Hero/Hero'
 import About from '../components/About/About'
 import Offer from '../components/Offer/Offer'
-import Gallery from '../components/Gallery'
+import Gallery from '../components/Gallery/Gallery'
 
 
 function Home() {

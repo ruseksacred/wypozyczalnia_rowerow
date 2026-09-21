@@ -1,3 +1,5 @@
+import './Gallery.css'
+
 const images = [
     {
         src: '/gallery/latoszyn-1.jpg',
@@ -9,7 +11,7 @@ const images = [
     },
     {
         src: '/gallery/trasa-1.jpg',
-        alt: 'Trasa rowerowa'
+        alt: 'Trasa rowerowa w okolicy Latoszyna-Zdroju'
     },
     {
         src: '/gallery/latoszyn-2.jpg',
@@ -21,7 +23,7 @@ const images = [
     },
     {
         src: '/gallery/trasa-2.jpg',
-        alt: 'Trasy w okolicy Latoszyna'
+        alt: 'Trasy rowerowe w okolicy Latoszyna'
     }
 ]
 
@@ -30,7 +32,9 @@ function Gallery() {
         <section id="galeria" className="gallery-section">
 
             <div className="gallery-heading">
-                <p className="gallery-label">GALERIA</p>
+                <p className="gallery-label">
+                    GALERIA
+                </p>
 
                 <h2>
                     Latoszyn-Zdrój
@@ -38,7 +42,7 @@ function Gallery() {
                     na dwóch kołach
                 </h2>
 
-                <p>
+                <p className="gallery-description">
                     Zobacz nasze rowery, malownicze trasy
                     i miejsca, które warto odkryć podczas wycieczki.
                 </p>
@@ -53,6 +57,7 @@ function Gallery() {
                         <img
                             src={image.src}
                             alt={image.alt}
+                            loading={index === 0 ? 'eager' : 'lazy'}
                         />
                     </div>
                 ))}
