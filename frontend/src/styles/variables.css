@@ -1,0 +1,11 @@
+:root {
+    --green-dark: #123d2b;
+    --green: #1f5a3a;
+    --green-light: #eaf2ec;
+    --background: #ffffff;
+    --background-warm: #f7f5ef;
+    --text-dark: #101713;
+    --text-muted: #52605a;
+    --border: #dfe5e1;
+    --content-width: 1400px;
+}
