@@ -1,8 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
+import { Navigation, Pagination } from 'swiper/modules'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+
 import './RoutesPage.css'
 
 type Route = {
@@ -74,7 +76,10 @@ function RoutesPage() {
 
             <section className="routes-hero">
                 <div className="routes-hero-content">
-                    <p className="routes-label">TRASY ROWEROWE</p>
+
+                    <p className="routes-label">
+                        TRASY ROWEROWE
+                    </p>
 
                     <h1>
                         Gotowe pomysły
@@ -87,32 +92,44 @@ function RoutesPage() {
                         i możliwości. Pobierz plik GPX i ruszaj
                         odkrywać okolice Latoszyna-Zdroju.
                     </p>
+
                 </div>
             </section>
 
             <section className="routes-content">
 
                 <div className="routes-section-heading">
+
                     <div>
-                        <p className="routes-label">POLECANE TRASY</p>
-                        <h2>Wybierz kierunek</h2>
+                        <p className="routes-label">
+                            POLECANE TRASY
+                        </p>
+
+                        <h2>
+                            Wybierz kierunek
+                        </h2>
                     </div>
 
                     <p>
                         Od spokojnej przejażdżki po bardziej wymagającą
                         trasę terenową.
                     </p>
+
                 </div>
 
                 <div className="routes-slider-wrapper">
 
                     <Swiper
-                        modules={[Navigation]}
+                        modules={[Navigation, Pagination]}
                         navigation
+                        pagination={{
+                            clickable: true
+                        }}
                         spaceBetween={24}
                         slidesPerView={1}
                         className="routes-swiper"
                     >
+
                         {routes.map((route) => (
                             <SwiperSlide key={route.id}>
 
@@ -132,7 +149,9 @@ function RoutesPage() {
                                             {route.type}
                                         </p>
 
-                                        <h2>{route.name}</h2>
+                                        <h2>
+                                            {route.name}
+                                        </h2>
 
                                         <p className="route-description">
                                             {route.description}
@@ -142,22 +161,30 @@ function RoutesPage() {
 
                                             <div>
                                                 <span>Dystans</span>
-                                                <strong>{route.distance}</strong>
+                                                <strong>
+                                                    {route.distance}
+                                                </strong>
                                             </div>
 
                                             <div>
                                                 <span>Czas</span>
-                                                <strong>{route.time}</strong>
+                                                <strong>
+                                                    {route.time}
+                                                </strong>
                                             </div>
 
                                             <div>
                                                 <span>Trudność</span>
-                                                <strong>{route.difficulty}</strong>
+                                                <strong>
+                                                    {route.difficulty}
+                                                </strong>
                                             </div>
 
                                             <div>
                                                 <span>Przewyższenie</span>
-                                                <strong>{route.elevation}</strong>
+                                                <strong>
+                                                    {route.elevation}
+                                                </strong>
                                             </div>
 
                                         </div>
@@ -165,17 +192,33 @@ function RoutesPage() {
                                         <div className="route-bottom">
 
                                             <div className="route-bike">
-                                                <span>Polecany rower</span>
-                                                <strong>{route.bike}</strong>
+                                                <span>
+                                                    Polecany rower
+                                                </span>
+
+                                                <strong>
+                                                    {route.bike}
+                                                </strong>
                                             </div>
 
-                                            <a
-                                                href={route.gpx}
-                                                download
-                                                className="route-gpx-button"
-                                            >
-                                                Pobierz GPX
-                                            </a>
+                                            <div className="route-actions">
+
+                                                <a
+                                                    href={`/trasy/${route.slug}`}
+                                                    className="route-more-link"
+                                                >
+                                                    Zobacz więcej →
+                                                </a>
+
+                                                <a
+                                                    href={route.gpx}
+                                                    download
+                                                    className="route-gpx-button"
+                                                >
+                                                    Pobierz GPX
+                                                </a>
+
+                                            </div>
 
                                         </div>
 
@@ -185,6 +228,7 @@ function RoutesPage() {
 
                             </SwiperSlide>
                         ))}
+
                     </Swiper>
 
                 </div>
