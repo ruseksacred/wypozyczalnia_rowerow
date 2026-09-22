@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import './PricingPage.css'
 
 type PricingType =
     | 'all'
@@ -10,16 +11,18 @@ type PricingType =
     | 'city'
     | 'scooter'
 
+type Price = {
+    label: string
+    price: string
+}
+
 type PricingItem = {
     id: number
     type: Exclude<PricingType, 'all'>
     category: string
     name: string
     description: string
-    prices: {
-        label: string
-        price: string
-    }[]
+    prices: Price[]
 }
 
 const pricing: PricingItem[] = [
@@ -27,7 +30,7 @@ const pricing: PricingItem[] = [
         id: 1,
         type: 'gravel',
         category: 'GRAVEL',
-        name: 'Rower gravelowy',
+        name: 'Rower gravel',
         description:
             'Idealny na asfalt, szutry i dłuższe wycieczki po okolicy.',
         prices: [
@@ -43,7 +46,7 @@ const pricing: PricingItem[] = [
         category: 'MTB',
         name: 'Rower MTB',
         description:
-            'Dla osób wybierających leśne drogi i bardziej wymagający teren.',
+            'Klasyczny rower górski na leśne drogi i wymagający teren.',
         prices: [
             { label: '2 godziny', price: '40 zł' },
             { label: '4 godziny', price: '60 zł' },
@@ -57,7 +60,7 @@ const pricing: PricingItem[] = [
         category: 'E-BIKE',
         name: 'Rower elektryczny',
         description:
-            'Komfortowe wspomaganie na dłuższe wycieczki i podjazdy.',
+            'Komfortowe wspomaganie na dłuższe trasy i okoliczne podjazdy.',
         prices: [
             { label: '2 godziny', price: '60 zł' },
             { label: '4 godziny', price: '90 zł' },
@@ -71,7 +74,7 @@ const pricing: PricingItem[] = [
         category: 'E-MTB',
         name: 'Elektryczny MTB',
         description:
-            'Mocne wspomaganie i terenowe możliwości na wymagające trasy.',
+            'Wspomaganie elektryczne połączone z możliwościami roweru terenowego.',
         prices: [
             { label: '2 godziny', price: '70 zł' },
             { label: '4 godziny', price: '110 zł' },
@@ -99,7 +102,7 @@ const pricing: PricingItem[] = [
         category: 'HULAJNOGA',
         name: 'Hulajnoga elektryczna',
         description:
-            'Wygodna opcja na krótkie przejazdy po okolicy.',
+            'Wygodna opcja na krótsze przejazdy po najbliższej okolicy.',
         prices: [
             { label: '1 godzina', price: '25 zł' },
             { label: '2 godziny', price: '40 zł' },
@@ -107,6 +110,16 @@ const pricing: PricingItem[] = [
             { label: 'Cały dzień', price: '100 zł' }
         ]
     }
+]
+
+const filters: { label: string; value: PricingType }[] = [
+    { label: 'Wszystkie', value: 'all' },
+    { label: 'Gravel', value: 'gravel' },
+    { label: 'MTB', value: 'mtb' },
+    { label: 'E-bike', value: 'ebike' },
+    { label: 'E-MTB', value: 'emtb' },
+    { label: 'Miejskie', value: 'city' },
+    { label: 'Hulajnogi', value: 'scooter' }
 ]
 
 function PricingPage() {
@@ -122,88 +135,68 @@ function PricingPage() {
 
             <section className="pricing-hero">
                 <div className="pricing-hero-content">
+
                     <p className="pricing-label">
-                        CENNIK WYPOŻYCZALNI
+                        CENNIK
                     </p>
 
                     <h1>
-                        Wybierz sprzęt
+                        Proste zasady.
                         <br />
-                        i ruszaj w trasę
+                        Jasne ceny.
                     </h1>
 
                     <p>
-                        Przejrzysty cennik bez ukrytych kosztów.
-                        Wybierz kategorię i sprawdź dostępne opcje
-                        wynajmu.
+                        Wybierz sprzęt i czas wypożyczenia.
+                        W razie pytań o dostępność skontaktuj się z nami.
                     </p>
+
                 </div>
             </section>
 
             <section className="pricing-section">
 
-                <div className="pricing-filters">
-                    <button
-                        className={filter === 'all' ? 'active' : ''}
-                        onClick={() => setFilter('all')}
-                    >
-                        Wszystkie
-                    </button>
-
-                    <button
-                        className={filter === 'gravel' ? 'active' : ''}
-                        onClick={() => setFilter('gravel')}
-                    >
-                        Gravel
-                    </button>
-
-                    <button
-                        className={filter === 'mtb' ? 'active' : ''}
-                        onClick={() => setFilter('mtb')}
-                    >
-                        MTB
-                    </button>
-
-                    <button
-                        className={filter === 'ebike' ? 'active' : ''}
-                        onClick={() => setFilter('ebike')}
-                    >
-                        E-bike
-                    </button>
-
-                    <button
-                        className={filter === 'emtb' ? 'active' : ''}
-                        onClick={() => setFilter('emtb')}
-                    >
-                        E-MTB
-                    </button>
-
-                    <button
-                        className={filter === 'city' ? 'active' : ''}
-                        onClick={() => setFilter('city')}
-                    >
-                        Miejskie
-                    </button>
-
-                    <button
-                        className={filter === 'scooter' ? 'active' : ''}
-                        onClick={() => setFilter('scooter')}
-                    >
-                        Hulajnogi
-                    </button>
+                <div
+                    className="pricing-filters"
+                    aria-label="Filtrowanie cennika"
+                >
+                    {filters.map((item) => (
+                        <button
+                            key={item.value}
+                            type="button"
+                            className={
+                                filter === item.value
+                                    ? 'active'
+                                    : ''
+                            }
+                            onClick={() => setFilter(item.value)}
+                        >
+                            {item.label}
+                        </button>
+                    ))}
                 </div>
 
                 <div className="pricing-cards">
-                    {filteredPricing.map((item) => (
-                        <article className="pricing-premium-card" key={item.id}>
 
+                    {filteredPricing.map((item) => (
+                        <article
+                            className="pricing-premium-card"
+                            key={item.id}
+                        >
                             <div className="pricing-card-header">
+
                                 <p>{item.category}</p>
+
                                 <h2>{item.name}</h2>
-                                <span>{item.description}</span>
+
+                                <span>
+                                    {item.description}
+                                </span>
+
                             </div>
 
                             <div className="pricing-table">
+
                                 {item.prices.map((price) => (
                                     <div
                                         className="pricing-row"
@@ -213,6 +206,7 @@ function PricingPage() {
                                         <strong>{price.price}</strong>
                                     </div>
                                 ))}
+
                             </div>
 
                             <Link
@@ -224,6 +218,7 @@ function PricingPage() {
 
                         </article>
                     ))}
+
                 </div>
 
             </section>

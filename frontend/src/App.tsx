@@ -5,7 +5,7 @@ import Home from './pages/Home'
 import Contact from './pages/Contact'
 import RoutesPage from './pages/RoutesPage'
 import BikesPage from './pages/Bikes/BikesPage'
-import PricingPage from './pages/PricingPage'
+import PricingPage from './pages/PricingPage/PricingPage'
 import Footer from './components/Footer'
 import ScrollToHash from './components/ScrollToHash'
 
