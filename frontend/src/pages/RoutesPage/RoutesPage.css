@@ -1,0 +1,429 @@
+/* =========================
+   ROUTES PAGE
+========================= */
+
+.routes-page {
+    background: #ffffff;
+}
+
+
+/* HERO */
+
+.routes-hero {
+    padding: 90px 8% 80px;
+    background: var(--green-light);
+}
+
+.routes-hero-content {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+.routes-label {
+    margin: 0 0 18px;
+    color: var(--green);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.routes-hero h1 {
+    margin: 0 0 25px;
+    color: var(--text-dark);
+    font-size: clamp(48px, 5vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+}
+
+.routes-intro {
+    max-width: 650px;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.routes-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 90px 7vw 110px;
+}
+
+.routes-section-heading {
+    margin-bottom: 45px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+    .routes-section-heading h2 {
+        margin: 0;
+        color: var(--text-dark);
+        font-size: clamp(38px, 4vw, 52px);
+        line-height: 1.1;
+    }
+
+    .routes-section-heading > p {
+        max-width: 430px;
+        margin: 0;
+        color: var(--text-muted);
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+
+/* =========================
+   SWIPER
+========================= */
+
+.routes-slider-wrapper {
+    position: relative;
+}
+
+.routes-swiper {
+    padding: 5px 5px 60px;
+}
+
+    .routes-swiper .swiper-button-prev,
+    .routes-swiper .swiper-button-next {
+        width: 48px;
+        height: 48px;
+        top: auto;
+        bottom: 0;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        background: white;
+        color: var(--green-dark);
+        box-shadow: 0 8px 25px rgba(18, 61, 43, 0.08);
+    }
+
+    .routes-swiper .swiper-button-prev {
+        left: calc(50% - 58px);
+    }
+
+    .routes-swiper .swiper-button-next {
+        right: calc(50% - 58px);
+    }
+
+        .routes-swiper .swiper-button-prev::after,
+        .routes-swiper .swiper-button-next::after {
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+
+/* =========================
+   ROUTE CARD
+========================= */
+
+.route-card {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    overflow: hidden;
+    background: var(--background-warm);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+.route-card-image {
+    min-height: 540px;
+    overflow: hidden;
+}
+
+    .route-card-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+.route-card:hover .route-card-image img {
+    transform: scale(1.025);
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.route-card-content {
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+}
+
+.route-type {
+    margin: 0 0 15px;
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.route-card-content h2 {
+    margin: 0 0 20px;
+    color: var(--text-dark);
+    font-size: clamp(32px, 3vw, 44px);
+    line-height: 1.1;
+}
+
+.route-description {
+    margin: 0 0 35px;
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.route-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 35px;
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+    .route-stats > div {
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        border-right: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .route-stats span,
+    .route-bike span {
+        color: var(--text-muted);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .route-stats strong {
+        color: var(--text-dark);
+        font-size: 17px;
+    }
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.route-bottom {
+    margin-top: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.route-bike {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+    .route-bike strong {
+        color: var(--green-dark);
+    }
+
+.route-gpx-button {
+    flex-shrink: 0;
+    min-height: 48px;
+    padding: 0 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green-dark);
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+    .route-gpx-button:hover {
+        background: var(--green);
+        transform: translateY(-2px);
+    }
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .routes-hero {
+        padding: 75px 6vw 65px;
+    }
+
+    .routes-content {
+        padding: 75px 6vw 90px;
+    }
+
+    .route-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .route-card-image {
+        min-height: 500px;
+    }
+
+    .route-card-content {
+        padding: 40px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .routes-hero {
+        padding: 60px 20px 50px;
+    }
+
+    .routes-label {
+        margin-bottom: 14px;
+        font-size: 12px;
+    }
+
+    .routes-hero h1 {
+        margin-bottom: 22px;
+        font-size: 40px;
+        line-height: 1.08;
+    }
+
+        .routes-hero h1 br {
+            display: none;
+        }
+
+    .routes-intro {
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .routes-content {
+        padding: 55px 20px 70px;
+    }
+
+    .routes-section-heading {
+        margin-bottom: 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+        .routes-section-heading h2 {
+            font-size: 36px;
+        }
+
+        .routes-section-heading > p {
+            font-size: 15px;
+        }
+
+
+    /* karta przechodzi z dwóch kolumn
+       na zdjęcie + treść */
+
+    .route-card {
+        grid-template-columns: 1fr;
+    }
+
+    .route-card-image {
+        min-height: 0;
+        height: 270px;
+    }
+
+    .route-card-content {
+        padding: 28px 24px;
+    }
+
+        .route-card-content h2 {
+            font-size: 30px;
+        }
+
+    .route-description {
+        margin-bottom: 28px;
+    }
+
+
+    /* parametry trasy */
+
+    .route-stats {
+        margin-bottom: 28px;
+    }
+
+        .route-stats > div {
+            padding: 14px;
+        }
+
+        .route-stats strong {
+            font-size: 15px;
+        }
+
+
+    /* dół karty */
+
+    .route-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .route-gpx-button {
+        width: 100%;
+    }
+
+
+    /* strzałki Swipera */
+
+    .routes-swiper {
+        padding-bottom: 58px;
+    }
+
+        .routes-swiper .swiper-button-prev,
+        .routes-swiper .swiper-button-next {
+            width: 44px;
+            height: 44px;
+        }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .route-card-image {
+        height: 230px;
+    }
+
+    .route-card-content {
+        padding: 24px 20px;
+    }
+
+    .route-stats {
+        grid-template-columns: 1fr;
+    }
+}
