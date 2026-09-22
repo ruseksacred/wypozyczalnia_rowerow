@@ -6,7 +6,7 @@ import Contact from './pages/ContactPage/Contact'
 import RoutesPage from './pages/RoutesPage/RoutesPage'
 import BikesPage from './pages/Bikes/BikesPage'
 import PricingPage from './pages/PricingPage/PricingPage'
-import Footer from './components/Footer'
+import Footer from './components/Footer/Footer'
 import ScrollToHash from './components/ScrollToHash'
 
 function App() {
