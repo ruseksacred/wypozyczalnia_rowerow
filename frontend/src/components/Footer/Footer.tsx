@@ -15,6 +15,8 @@ function Footer() {
 
             <div className="footer-content">
 
+                {/* BRAND */}
+
                 <div className="footer-brand">
 
                     <Link
@@ -30,8 +32,7 @@ function Footer() {
 
                     <p>
                         Wypożyczalnia rowerów w Latoszynie-Zdroju
-                        i okolicach. Wybierz rower i ruszaj odkrywać
-                        region na dwóch kołach.
+                        i okolicach. Odkrywaj region na dwóch kołach.
                     </p>
 
                     <div className="footer-socials">
@@ -55,6 +56,8 @@ function Footer() {
                 </div>
 
 
+                {/* NAVIGATION */}
+
                 <div className="footer-links">
 
                     <h3>Nawigacja</h3>
@@ -63,11 +66,11 @@ function Footer() {
                         Strona główna
                     </Link>
 
-                    <Link to="/#o-nas">
+                    <Link to="/#o-nas" className="footer-desktop-link">
                         O nas
                     </Link>
 
-                    <Link to="/#oferta">
+                    <Link to="/#oferta" className="footer-desktop-link">
                         Oferta
                     </Link>
 
@@ -89,6 +92,8 @@ function Footer() {
 
                 </div>
 
+
+                {/* CONTACT */}
 
                 <div className="footer-contact">
 
@@ -129,6 +134,8 @@ function Footer() {
                 </div>
 
 
+                {/* HOURS */}
+
                 <div className="footer-hours">
 
                     <h3>Godziny otwarcia</h3>
@@ -150,18 +157,53 @@ function Footer() {
 
                 </div>
 
+
+                {/* MOBILE ACTIONS */}
+
+                <div className="footer-mobile-actions">
+
+                    <a
+                        href="tel:+48791020803"
+                        className="footer-mobile-button"
+                    >
+                        <FaPhone />
+                        <span>Zadzwoń</span>
+                    </a>
+
+                    <a
+                        href="mailto:rowery.latoszynzdroj@gmail.com"
+                        className="footer-mobile-button"
+                    >
+                        <FaEnvelope />
+                        <span>Napisz</span>
+                    </a>
+
+                </div>
+
             </div>
 
+
+            {/* BOTTOM */}
 
             <div className="footer-bottom">
 
                 <p>
-                    © 2026 Rowery Latoszyn Zdrój. Wszystkie prawa zastrzeżone.
+                    © 2026 Rowery Latoszyn Zdrój
                 </p>
 
-                <Link to="/kontakt">
-                    Skontaktuj się z nami
-                </Link>
+                <div className="footer-bottom-links">
+
+                    <Link to="/kontakt">
+                        Kontakt
+                    </Link>
+
+                    <span>•</span>
+
+                    <Link to="/cennik">
+                        Cennik
+                    </Link>
+
+                </div>
 
             </div>
 
