@@ -1,0 +1,378 @@
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: var(--green-dark);
+    color: #ffffff;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.footer-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 75px 7vw 65px;
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 1.2fr 1.2fr;
+    gap: 65px;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+.footer h3 {
+    margin: 0 0 24px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   BRAND
+========================= */
+
+.footer-brand {
+    min-width: 0;
+}
+
+.footer-logo {
+    display: inline-block;
+}
+
+    .footer-logo img {
+        width: 125px;
+        height: 125px;
+        display: block;
+        object-fit: contain;
+    }
+
+.footer-brand > p {
+    max-width: 320px;
+    margin: 18px 0 0;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
+
+.footer-socials {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+}
+
+    .footer-socials a {
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 50%;
+        color: #ffffff;
+        text-decoration: none;
+        transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+        .footer-socials a:hover {
+            background: #ffffff;
+            color: var(--green-dark);
+            transform: translateY(-2px);
+        }
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+}
+
+    .footer-links h3 {
+        margin-bottom: 13px;
+    }
+
+    .footer-links a {
+        color: rgba(255, 255, 255, 0.68);
+        font-size: 14px;
+        text-decoration: none;
+        transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+        .footer-links a:hover {
+            color: #ffffff;
+            transform: translateX(3px);
+        }
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.footer-contact {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+    .footer-contact h3 {
+        margin-bottom: 7px;
+    }
+
+.footer-contact-item {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 18px minmax(0, 1fr);
+    align-items: start;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 14px;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+    .footer-contact-item svg {
+        margin-top: 3px;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .footer-contact-item span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+a.footer-contact-item {
+    transition: color 0.2s ease;
+}
+
+    a.footer-contact-item:hover {
+        color: #ffffff;
+    }
+
+
+/* =========================
+   HOURS
+========================= */
+
+.footer-hours {
+    min-width: 0;
+}
+
+.footer-hours-row {
+    padding: 13px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+    .footer-hours-row:first-of-type {
+        padding-top: 0;
+    }
+
+    .footer-hours-row span {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 13px;
+    }
+
+    .footer-hours-row strong {
+        flex-shrink: 0;
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+    width: calc(100% - 14vw);
+    max-width: 1204px;
+    margin: 0 auto;
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+    .footer-bottom p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 12px;
+    }
+
+    .footer-bottom a {
+        flex-shrink: 0;
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 12px;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+        .footer-bottom a:hover {
+            color: #ffffff;
+        }
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+
+    .footer-content {
+        padding: 65px 6vw 55px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 55px 70px;
+    }
+
+    .footer-bottom {
+        width: calc(100% - 12vw);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .footer-content {
+        padding: 50px 20px 40px;
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+
+    /* BRAND */
+
+    .footer-brand {
+        padding-bottom: 35px;
+    }
+
+    .footer-logo img {
+        width: 105px;
+        height: 105px;
+    }
+
+    .footer-brand > p {
+        max-width: 330px;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+
+    .footer-socials {
+        margin-top: 20px;
+    }
+
+
+    /* SECTIONS */
+
+    .footer-links,
+    .footer-contact,
+    .footer-hours {
+        padding: 28px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer h3 {
+        margin-bottom: 18px;
+        font-size: 14px;
+    }
+
+
+    /* LINKS */
+
+    .footer-links {
+        gap: 0;
+    }
+
+        .footer-links h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            width: 100%;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+
+    /* CONTACT */
+
+    .footer-contact {
+        gap: 15px;
+    }
+
+        .footer-contact h3 {
+            margin-bottom: 4px;
+        }
+
+
+    /* HOURS */
+
+    .footer-hours-row {
+        padding: 12px 0;
+    }
+
+
+    /* BOTTOM */
+
+    .footer-bottom {
+        width: auto;
+        margin: 0 20px;
+        padding: 25px 0 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+        .footer-bottom p {
+            line-height: 1.6;
+        }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .footer-content {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .footer-bottom {
+        margin-left: 18px;
+        margin-right: 18px;
+    }
+
+    .footer-hours-row {
+        gap: 12px;
+    }
+}
