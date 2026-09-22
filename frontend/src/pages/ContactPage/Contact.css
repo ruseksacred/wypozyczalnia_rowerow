@@ -48,7 +48,7 @@
 
 
 /* =========================
-   CONTENT
+   MAIN CONTENT
 ========================= */
 
 .contact-content {
@@ -66,14 +66,18 @@
    CONTACT INFO
 ========================= */
 
-.contact-info h2 {
-    max-width: 500px;
-    margin: 0 0 25px;
-    color: var(--text-dark);
-    font-size: clamp(36px, 4vw, 50px);
-    line-height: 1.1;
-    letter-spacing: -1px;
+.contact-info {
+    min-width: 0;
 }
+
+    .contact-info h2 {
+        max-width: 500px;
+        margin: 0 0 25px;
+        color: var(--text-dark);
+        font-size: clamp(36px, 4vw, 50px);
+        line-height: 1.1;
+        letter-spacing: -1px;
+    }
 
 .contact-description {
     max-width: 520px;
@@ -85,31 +89,37 @@
 
 
 /* =========================
-   DETAILS
+   CONTACT DETAILS
 ========================= */
 
 .contact-details {
-    margin-top: 45px;
+    width: 100%;
+    margin-top: 42px;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 0;
+    border-top: 1px solid var(--border);
 }
 
 .contact-detail {
-    padding: 18px 0;
-    display: flex;
+    width: 100%;
+    min-height: 82px;
+    padding: 16px 0;
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
     align-items: center;
-    gap: 18px;
+    column-gap: 18px;
     border-bottom: 1px solid var(--border);
+    text-align: left;
 }
 
 .contact-detail-icon {
-    width: 46px;
-    height: 46px;
-    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
+    justify-self: start;
     border-radius: 50%;
     background: var(--green-light);
     color: var(--green-dark);
@@ -120,20 +130,32 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 5px;
+    text-align: left;
 }
 
 .contact-detail strong {
+    display: block;
     color: var(--text-dark);
     font-size: 15px;
+    font-weight: 700;
 }
 
 .contact-detail span,
 .contact-detail a {
+    display: block;
+    max-width: 100%;
     color: var(--text-muted);
     font-size: 15px;
+    line-height: 1.45;
+    text-align: left;
     text-decoration: none;
     overflow-wrap: anywhere;
+}
+
+.contact-detail a {
+    transition: color 0.2s ease;
 }
 
     .contact-detail a:hover {
@@ -146,6 +168,7 @@
 ========================= */
 
 .contact-form-wrapper {
+    min-width: 0;
     padding: 42px;
     background: var(--background-warm);
     border: 1px solid var(--border);
@@ -164,6 +187,7 @@
     margin: 0 0 12px;
     color: var(--text-dark);
     font-size: 34px;
+    line-height: 1.15;
 }
 
 .contact-form-description {
@@ -179,12 +203,14 @@
 ========================= */
 
 .contact-form {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 22px;
 }
 
     .contact-form label {
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -258,11 +284,12 @@
     margin: 18px 0 0;
     color: var(--text-muted);
     font-size: 12px;
+    line-height: 1.5;
 }
 
 
 /* =========================
-   MAP
+   MAP SECTION
 ========================= */
 
 .contact-map-section {
@@ -282,6 +309,7 @@
         color: var(--text-dark);
         font-size: clamp(34px, 4vw, 48px);
         line-height: 1.1;
+        letter-spacing: -1px;
     }
 
 .contact-map {
@@ -290,8 +318,8 @@
     height: 450px;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 18px;
     border: 1px solid var(--border);
+    border-radius: 18px;
 }
 
     .contact-map iframe {
@@ -319,10 +347,12 @@
     }
 
     .contact-info {
-        max-width: 650px;
+        width: 100%;
+        max-width: 700px;
     }
 
     .contact-form-wrapper {
+        width: 100%;
         max-width: 700px;
     }
 
@@ -353,6 +383,7 @@
         margin-bottom: 22px;
         font-size: 40px;
         line-height: 1.08;
+        letter-spacing: -1px;
     }
 
         .contact-hero h1 br {
@@ -365,43 +396,84 @@
     }
 
 
-    /* CONTENT */
+    /* MAIN CONTENT */
 
     .contact-content {
-        padding: 65px 20px;
+        padding: 60px 20px 65px;
         gap: 50px;
     }
 
-    .contact-info h2 {
-        font-size: 36px;
+    .contact-info {
+        width: 100%;
+        max-width: none;
     }
+
+        .contact-info h2 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            line-height: 1.1;
+        }
 
     .contact-description {
+        max-width: none;
         font-size: 16px;
+        line-height: 1.65;
     }
 
 
-    /* DETAILS */
+    /* CONTACT DETAILS */
 
     .contact-details {
-        margin-top: 32px;
-        gap: 5px;
+        width: 100%;
+        margin-top: 30px;
+        gap: 0;
     }
 
     .contact-detail {
-        padding: 16px 0;
-        gap: 14px;
+        width: 100%;
+        min-height: 74px;
+        padding: 14px 0;
+        display: grid;
+        grid-template-columns: 44px minmax(0, 1fr);
+        align-items: center;
+        column-gap: 15px;
+        text-align: left;
     }
 
     .contact-detail-icon {
-        width: 42px;
-        height: 42px;
+        width: 44px;
+        height: 44px;
+        justify-self: start;
+        font-size: 16px;
+    }
+
+    .contact-detail > div:last-child {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+        text-align: left;
+    }
+
+    .contact-detail strong {
+        font-size: 14px;
+    }
+
+    .contact-detail span,
+    .contact-detail a {
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.4;
+        text-align: left;
     }
 
 
     /* FORM */
 
     .contact-form-wrapper {
+        width: 100%;
+        max-width: none;
         padding: 28px 22px;
         border-radius: 14px;
     }
@@ -410,12 +482,17 @@
             font-size: 30px;
         }
 
+    .contact-form-description {
+        margin-bottom: 25px;
+    }
+
     .contact-form {
         gap: 18px;
     }
 
         .contact-form button {
             width: 100%;
+            align-self: stretch;
         }
 
 
@@ -446,16 +523,47 @@
 
 @media (max-width: 400px) {
 
-    .contact-hero h1 {
-        font-size: 37px;
+    .contact-hero {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+        .contact-hero h1 {
+            font-size: 37px;
+        }
+
+    .contact-content {
+        padding-left: 18px;
+        padding-right: 18px;
     }
 
     .contact-info h2 {
         font-size: 32px;
     }
 
+    .contact-detail {
+        grid-template-columns: 40px minmax(0, 1fr);
+        column-gap: 13px;
+    }
+
+    .contact-detail-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    .contact-detail span,
+    .contact-detail a {
+        font-size: 13px;
+    }
+
     .contact-form-wrapper {
         padding: 25px 18px;
+    }
+
+    .contact-map-section {
+        padding-left: 18px;
+        padding-right: 18px;
     }
 
     .contact-map {
